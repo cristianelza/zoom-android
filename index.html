@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ar-demo</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <a-scene arjs
+      embedded
+      renderer="logarithmicDepthBuffer: true;"
+      vr-mode-ui="enabled: false"
+      gesture-detector>
+
+        <a-assets>
+            <a-asset-item id="daun_ganja" src="assets_gltf/daun-ganja.gltf"></a-asset-item>
+            <a-asset-item id="bong" src="assets_gltf/bong.gltf"></a-asset-item>
+            <a-asset-item id="kokain" src="assets_gltf/kokain.gltf"></a-asset-item>
+            <a-asset-item id="sabu" src="assets_gltf/sabu.gltf"></a-asset-item>
+            <a-asset-item id="sabu2" src="assets_gltf/sabu2.gltf"></a-asset-item>
+            <a-asset-item id="morfin" src="assets_gltf/morphine.gltf"></a-asset-item>
+            <a-asset-item id="ekstasi" src="assets_gltf/ekstasi.gltf"></a-asset-item>
+            <a-asset-item id="daun_ganja2" src="assets_gltf/daun-ganja2.gltf"></a-asset-item>
+            <a-asset-item id="duck" src="assets_gltf/duck.gltf"></a-asset-item>
+        </a-assets>
+<!-- marker Narkotika Golongan 1 -->
+         <a-marker id="daun_ganja1" type='pattern' url='assets_patt/pattern-daun-ganja.patt' 
+         raycaster="objects: .clickable"
+         emitevents="true"
+         cursor="fuse: false; rayOrigin: mouse;">
+         <a-entity movement-control="speed: 0.15" position="0 0 6">
+            </a-entity>
+        </a-entity>
+            <a-entity
+                gltf-model="#daun_ganja"
+                scale="5 5 5" rotation="10 270 50" sounddaun-ganja
+                class="clickable"
+                gesture-handler>
+                <a-animation attribute="rotation" to="90 90 0" dur="9000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+        </a-marker>
+
+         <a-marker id="bong1" type='pattern' url='assets_patt/pattern-bong.patt' >
+            <a-entity
+                gltf-model="#bong"
+                scale="0.50 0.50 0.50" rotation="200 1000 60" soundbong>
+                <a-animation attribute="rotation" to="90 0 0" dur="70000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            </a-entity>
+        </a-marker>
+
+        <a-marker id="kokain1" type='pattern' url='assets_patt/pattern-kokain.patt' >
+            <a-entity
+                gltf-model="#kokain"
+                scale="0.20 0.20 0.20" rotation="10 270 50" soundkokain>
+                <a-animation attribute="rotation" to="90 90 90" dur="9000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+        </a-marker>
+
+        <a-marker id="sabu1" type='pattern' url='assets_patt/pattern-sabu.patt' >
+            <a-entity
+                gltf-model="#sabu"
+                scale="0.1 0.1 0.1" rotation="10 270 50" soundsabu>
+                <a-animation attribute="rotation" to="90 90 90" dur="9000" repeat="indefinite" easing="linear" ></a-animation>
+            </a-entity>
+        </a-marker>
+
+        <a-marker id="sabu2" type='pattern' url='assets_patt/pattern-sabu2.patt' >
+            <a-entity
+                gltf-model="#sabu2"
+                scale="1 1 1" rotation="10 270 50" soundsabu2>
+                <a-animation attribute="rotation" to="90 90 90" dur="9000" repeat="indefinite" easing="linear" ></a-animation>
+            </a-entity>
+        </a-marker>
+
+       <!--  marker narkotika golongan 2 -->
+
+        <a-marker id="morfin1" type='pattern' url='assets_patt/pattern-morfin.patt' >
+            <a-entity
+                gltf-model="#morfin"
+                scale="0.80 0.80 0.80" rotation="200 1000 60" soundmorfin>
+                <a-animation attribute="rotation" to="90 90 90" dur="70000" repeat="indefinite" easing="linear" ></a-animation>
+            </a-entity>
+        </a-marker>
+
+        <a-marker id="ekstasi1" type='pattern' url='assets_patt/pattern-ekstasi.patt' >
+            <a-entity
+                gltf-model="#ekstasi"
+                scale="0.50 0.50 0.50" rotation="10 270 50" soundekstasi>
+                <a-animation attribute="rotation" to="90 90 90" dur="9000" repeat="indefinite" easing="linear" ></a-animation>
+            </a-entity>
+        </a-marker>
+
+        <a-marker id="daun_ganja2" type='pattern' url='assets_patt/pattern-daun-ganja2.patt' >
+            <a-entity
+                gltf-model="#daun_ganja2"
+                scale="0.10 0.10 0.10" rotation="10 270 50" sounddaun-ganja2>
+                <a-animation attribute="rotation" to="90 90 90" dur="9000" repeat="indefinite" easing="linear" ></a-animation>
+            </a-entity>
+        </a-marker>
+        <a-marker id="duck1" type='pattern' url='assets_patt/pattern-duck.patt' 
+         raycaster="objects: .clickable"
+         emitevents="true"
+         cursor="fuse: false; rayOrigin: mouse;">
+           <a-entity gltf-model="#duck" scale="1 1 1" position="0 1 -1" animation-mixer="clip:Animation" soundbebek
+           class="clickable"
+           gesture-handler></a-entity>
+        </a-marker>
+        <a-entity> 
+            <a-camera look-controls position="0 1.6 0">
+            <a-gltf-model
+            src="assets_gltf/sekolah-pro.gltf"
+            position="7 3.50 -17" scale="80 80 80"></a-gltf-model>
+            <a-gltf-model
+            src="assets_gltf/merdeka-belajar.gltf"
+            position="-4.8 1.1 -13" scale="80 80 80"></a-gltf-model>
+            <a-text value="powered by: PT.Kita Serba Digital"
+            color="white"
+            position="-2 -3.22 -15"></a-text>
+            </a-camera>
+            </a-entity>
+    </a-scene>
+</body>
+</html>
